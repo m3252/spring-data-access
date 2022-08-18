@@ -1,4 +1,4 @@
-package hello.jdbc.domian;
+package hello.jdbc.domain;
 
 import lombok.Data;
 

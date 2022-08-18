@@ -1,7 +1,7 @@
 package hello.jdbc.repository;
 
 import hello.jdbc.connection.DBConnectionUtil;
-import hello.jdbc.domian.Member;
+import hello.jdbc.domain.Member;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;

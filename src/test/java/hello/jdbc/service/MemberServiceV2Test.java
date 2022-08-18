@@ -1,7 +1,6 @@
 package hello.jdbc.service;
 
-import hello.jdbc.domian.Member;
-import hello.jdbc.repository.MemberRepositoryV1;
+import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepositoryV2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
