@@ -49,7 +49,7 @@ class MemberServiceV3_4Test {
             this.dataSource = dataSource;
         }
         @Bean MemberRepositoryV3 memberRepositoryV3() {return new MemberRepositoryV3(dataSource);}
-        @Bean MemberServiceV3_3 memberServiceV3_3() {return new MemberServiceV3_3(memberRepositoryV3());}
+         @Bean MemberServiceV3_3 memberServiceV3_3() {return new MemberServiceV3_3(memberRepositoryV3());}
     }
 
     @AfterEach
