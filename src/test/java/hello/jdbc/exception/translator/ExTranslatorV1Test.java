@@ -28,7 +28,7 @@ public class ExTranslatorV1Test {
     @BeforeEach
     void init() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource(URL, USERNAME, PASSWORD);
-        Repository repository = new Repository(dataSource);
+        repository = new Repository(dataSource);
         service = new Service(repository);
     }
 

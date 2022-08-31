@@ -3,6 +3,7 @@ package hello.jdbc.service;
 import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepository;
 import hello.jdbc.repository.MemberRepositoryV4_1;
+import hello.jdbc.repository.MemberRepositoryV4_2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -48,9 +49,17 @@ class MemberServiceV4Test {
         public testConfig(DataSource dataSource) {
             this.dataSource = dataSource;
         }
+
         @Bean
-        MemberRepositoryV4_1 memberRepository() {return new MemberRepositoryV4_1(dataSource);}
-        @Bean MemberServiceV4 memberServiceV4() {return new MemberServiceV4(memberRepository());}
+        MemberRepository memberRepository() {
+//            return new MemberRepositoryV4_1(dataSource);
+            return new MemberRepositoryV4_2(dataSource);
+        }
+
+        @Bean
+        MemberServiceV4 memberServiceV4() {
+            return new MemberServiceV4(memberRepository());
+        }
     }
 
     @AfterEach
@@ -61,7 +70,7 @@ class MemberServiceV4Test {
     }
 
     @Test
-    void aopCheck(){
+    void aopCheck() {
         log.info("memberService class={}", memberService.getClass());
         log.info("memberRepository class={}", memberRepository.getClass());
         assertThat(AopUtils.isAopProxy(memberService)).isTrue();
